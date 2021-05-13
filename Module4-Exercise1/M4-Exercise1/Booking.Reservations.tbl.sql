@@ -10,6 +10,9 @@ CREATE TABLE Booking.Reservations
     CONSTRAINT [Booking.Reservations:PK] PRIMARY KEY CLUSTERED,
   CustomerId INT,
   HotelId INT,
+  BookingDate DATETIME2,
+  StartDate DATE,
+  StayLengthInDays INT,
   ReservationDate DATE,
   AdditionalColumns BINARY(200),
   CONSTRAINT [Booking.Reservations:FK-->Booking.Customers] 
@@ -17,3 +20,4 @@ CREATE TABLE Booking.Reservations
   CONSTRAINT [Booking.Reservations:FK-->Vendors.Hotels]
     FOREIGN KEY (HotelId) REFERENCES Vendors.Hotels(HotelId)
 );
+GO
